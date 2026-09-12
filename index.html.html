@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grado de Joice Patricia López Pérez</title>
+</head>
+<body style="margin:0;">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Jost:wght@300;400;500;600&display=swap');
+
+  #inv-root {
+    --paper: #FBF6EC;
+    --paper-dim: #F4EADA;
+    --wine: #6E1B2C;
+    --wine-deep: #4A1220;
+    --gold: #B98A2E;
+    --gold-soft: #E4C468;
+    --ink: #2E2024;
+    --ink-soft: #7A6A6E;
+    font-family: 'Jost', sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(ellipse at 20% 0%, rgba(185,138,46,0.10), transparent 55%),
+      radial-gradient(ellipse at 85% 100%, rgba(110,27,44,0.14), transparent 55%),
+      linear-gradient(160deg, #F2E9DA 0%, #E9DCC7 100%);
+    padding: 40px 16px 56px;
+    min-height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+  #inv-root *, #inv-root *::before, #inv-root *::after { box-sizing: border-box; }
+  #inv-root .card {
+    width: 100%;
+    max-width: 460px;
+    background: var(--paper);
+    border-radius: 6px;
+    position: relative;
+    padding: 8px 26px 30px;
+    box-shadow: 0 30px 60px -22px rgba(74,18,32,0.45);
+    overflow: hidden;
+  }
+  #inv-root .flourish-top, #inv-root .flourish-bottom {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  #inv-root .flourish-bottom { transform: rotate(180deg); margin-top: 10px; }
+
+  #inv-root .cap-icon { display: flex; justify-content: center; margin: 6px 0 18px; }
+
+  #inv-root .tag {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  #inv-root h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.3;
+    margin: 0 0 20px;
+    color: var(--wine);
+  }
+  #inv-root .name {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 31px;
+    text-align: center;
+    line-height: 1.15;
+    margin: 0 0 16px;
+    color: var(--wine);
+  }
+  #inv-root .divider {
+    width: 46px;
+    height: 1.5px;
+    background: var(--gold);
+    margin: 0 auto 18px;
+  }
+  #inv-root .date-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+  #inv-root .date-row span.num {
+    color: var(--wine);
+    font-weight: 600;
+  }
+  #inv-root p.lead {
+    font-family: 'Fraunces', serif;
+    font-size: 16.5px;
+    line-height: 1.6;
+    text-align: center;
+    color: var(--ink);
+    margin: 0 0 14px;
+  }
+  #inv-root p.note {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    text-align: center;
+    margin: 0 0 8px;
+  }
+
+  #inv-root .step {
+    border-top: 1px solid #E6D8C0;
+    padding-top: 22px;
+    margin-top: 24px;
+  }
+  #inv-root .step-label {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--wine);
+    margin-bottom: 12px;
+  }
+  #inv-root input[type="text"] {
+    width: 100%;
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    padding: 11px 12px;
+    border: 1px solid #E0CFAF;
+    border-radius: 4px;
+    background: var(--paper-dim);
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  #inv-root input[type="text"]:focus {
+    outline: 2px solid var(--wine);
+    outline-offset: 1px;
+  }
+  #inv-root .btn-row { display: flex; gap: 10px; }
+  #inv-root button {
+    font-family: 'Jost', sans-serif;
+    font-size: 13.5px;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 12px 14px;
+    border: 1px solid transparent;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  #inv-root button:focus-visible { outline: 2px solid var(--wine); outline-offset: 2px; }
+  #inv-root button:active { transform: translateY(1px); }
+  #inv-root .btn-yes {
+    flex: 1;
+    background: var(--wine);
+    color: var(--paper);
+  }
+  #inv-root .btn-no {
+    flex: 1;
+    background: transparent;
+    color: var(--ink-soft);
+    border-color: #E0CFAF;
+  }
+  #inv-root .btn-primary {
+    width: 100%;
+    background: var(--gold);
+    color: var(--wine-deep);
+    font-weight: 600;
+    margin-top: 8px;
+  }
+  #inv-root .btn-primary:disabled {
+    background: #E9DDC3;
+    color: #B0A183;
+    cursor: not-allowed;
+  }
+  #inv-root .hint {
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  #inv-root .menu-grid {
+    display: grid;
+    gap: 10px;
+  }
+  #inv-root .dish {
+    border: 1px solid #E0CFAF;
+    border-radius: 4px;
+    padding: 12px 12px;
+    background: var(--paper-dim);
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 4px 10px;
+  }
+  #inv-root .dish.selected {
+    border-color: var(--wine);
+    background: #F3E4E1;
+    box-shadow: inset 0 0 0 1px var(--wine);
+  }
+  #inv-root .dish .dname {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 14.5px;
+    color: var(--ink);
+    grid-column: 1;
+  }
+  #inv-root .dish .dprice {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--wine);
+    grid-column: 2;
+    white-space: nowrap;
+  }
+  #inv-root .dish .ddesc {
+    grid-column: 1 / -1;
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+
+  #inv-root .thanks {
+    text-align: center;
+    padding-top: 8px;
+  }
+  #inv-root .thanks .mark {
+    width: 44px; height: 44px;
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px;
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    color: var(--wine);
+  }
+  #inv-root .thanks h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 0 0 10px;
+    color: var(--wine);
+  }
+  #inv-root .thanks p {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin: 0 0 4px;
+  }
+  #inv-root .thanks .order {
+    margin-top: 18px;
+    padding: 13px;
+    background: var(--paper-dim);
+    border: 1px solid #E6D8C0;
+    border-radius: 4px;
+    font-size: 12.5px;
+    color: var(--ink);
+    text-align: left;
+  }
+  #inv-root .thanks .order b { color: var(--wine); }
+
+  #inv-root .footer-link {
+    text-align: center;
+    margin-top: 26px;
+  }
+  #inv-root .footer-link button {
+    background: none;
+    border: none;
+    font-size: 10.5px;
+    color: #C3B49A;
+    text-decoration: underline;
+    padding: 4px;
+  }
+
+  #inv-root .admin-panel {
+    margin-top: 16px;
+    border-top: 1px solid #E6D8C0;
+    padding-top: 16px;
+  }
+  #inv-root .admin-panel table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+    margin: 12px 0;
+  }
+  #inv-root .admin-panel th, #inv-root .admin-panel td {
+    text-align: left;
+    padding: 6px 6px;
+    border-bottom: 1px solid #E6D8C0;
+  }
+  #inv-root .admin-panel th { color: var(--gold); font-weight: 600; }
+  #inv-root .admin-summary {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  #inv-root .admin-summary div {
+    flex: 1;
+    background: var(--paper-dim);
+    border: 1px solid #E0CFAF;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+  }
+  #inv-root .admin-summary .num { font-size: 18px; font-weight: 600; color: var(--wine); }
+  #inv-root .admin-summary .lbl { font-size: 10px; color: var(--ink-soft); }
+
+  @media (prefers-reduced-motion: reduce) {
+    #inv-root button { transition: none; }
+  }
+</style>
+
+<div id="inv-root">
+  <div class="card">
+    <svg class="flourish-top" viewBox="0 0 460 70" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,50 C90,10 150,60 230,30 C310,0 370,55 460,20" fill="none" stroke="#B98A2E" stroke-width="1.4" opacity="0.55"/>
+      <circle cx="60" cy="22" r="2" fill="#B98A2E" opacity="0.5"/>
+      <circle cx="150" cy="48" r="1.6" fill="#6E1B2C" opacity="0.4"/>
+      <circle cx="330" cy="14" r="2.2" fill="#B98A2E" opacity="0.45"/>
+      <circle cx="410" cy="42" r="1.6" fill="#6E1B2C" opacity="0.4"/>
+    </svg>
+
+    <div class="tag">Ceremonia de grado</div>
+    <h1>Ingeniería Industrial</h1>
+
+    <div class="cap-icon">
+      <svg width="112" height="82" viewBox="0 0 140 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M46,52 Q70,86 94,52 L94,64 Q70,96 46,64 Z" fill="#3C0E1A"/>
+        <path d="M46,58 Q70,80 94,58 L94,64 Q70,84 46,64 Z" fill="#B98A2E"/>
+        <path d="M70,10 L8,42 L70,68 L70,44 Z" fill="#7A2436"/>
+        <path d="M70,10 L132,42 L70,68 L70,44 Z" fill="#4A1220"/>
+        <path d="M70,10 L132,42 L70,74 L8,42 Z" fill="none" stroke="#3C0E1A" stroke-width="1"/>
+        <path d="M70,10 L8,42 L70,74" fill="none" stroke="#8C3044" stroke-width="0.75" opacity="0.6"/>
+        <circle cx="70" cy="41" r="4.5" fill="#E4C468"/>
+        <path d="M70,41 C58,52 46,60 42,78" fill="none" stroke="#B98A2E" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M38,76 L46,76 L46,86 Q42,92 38,86 Z" fill="#B98A2E"/>
+        <line x1="40" y1="79" x2="40" y2="90" stroke="#8C6A20" stroke-width="0.8"/>
+        <line x1="42.5" y1="79" x2="42.5" y2="91" stroke="#8C6A20" stroke-width="0.8"/>
+        <line x1="45" y1="79" x2="45" y2="90" stroke="#8C6A20" stroke-width="0.8"/>
+      </svg>
+    </div>
+
+    <div class="name">Joice Patricia<br/>López Pérez</div>
+    <div class="divider"></div>
+    <div class="date-row"><span class="num">25</span> de <span class="num">septiembre</span> de <span class="num">2026</span></div>
+
+    <div id="inv-intro">
+      <p class="lead">Después de años de fórmulas, procesos y noches sin dormir, llega el momento de celebrar.</p>
+      <p class="note">Quiero compartir este logro contigo y tenerte a mi lado en la mesa donde celebraremos todo lo que ha significado llegar hasta aquí. Porque hay momentos que se disfrutan mucho más cuando se comparten con las personas que hacen especial el camino.</p>
+      <p class="note">Si confirmas tu asistencia, podrás elegir aquí tu plato para dejarlo listo con tiempo.</p>
+    </div>
+
+    <div id="inv-step1" class="step">
+      <div class="step-label">¿Me acompañas?</div>
+      <input type="text" id="inv-name" placeholder="Tu nombre completo" autocomplete="name" />
+      <div class="btn-row">
+        <button class="btn-yes" id="inv-btn-yes">Sí, ahí estaré</button>
+        <button class="btn-no" id="inv-btn-no">No podré ir</button>
+      </div>
+      <div class="hint" id="inv-name-hint" style="display:none;">Escribe tu nombre antes de responder.</div>
+    </div>
+
+    <div id="inv-step2" class="step" style="display:none;">
+      <div class="step-label">Elige tu plato</div>
+      <div class="menu-grid" id="inv-menu"></div>
+      <button class="btn-primary" id="inv-confirm-dish" disabled>Confirmar mi plato</button>
+    </div>
+
+    <div id="inv-thanks" class="thanks" style="display:none;"></div>
+
+    <svg class="flourish-bottom" viewBox="0 0 460 70" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,50 C90,10 150,60 230,30 C310,0 370,55 460,20" fill="none" stroke="#B98A2E" stroke-width="1.4" opacity="0.55"/>
+      <circle cx="60" cy="22" r="2" fill="#B98A2E" opacity="0.5"/>
+      <circle cx="150" cy="48" r="1.6" fill="#6E1B2C" opacity="0.4"/>
+      <circle cx="330" cy="14" r="2.2" fill="#B98A2E" opacity="0.45"/>
+      <circle cx="410" cy="42" r="1.6" fill="#6E1B2C" opacity="0.4"/>
+    </svg>
+
+    <div class="footer-link">
+      <button id="inv-admin-toggle" type="button">Panel de Joice</button>
+    </div>
+
+    <div id="inv-admin" class="admin-panel" style="display:none;"></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+(function () {
+  var DISHES = [
+    { id: 'bondiola', name: 'Bondiola de Cerdo', price: 44900, desc: '400 gr de corte de cerdo al carbón, con papa cocida, papas sour cream y ensalada.' },
+    { id: 'lomo_cerdo', name: 'Lomo de Cerdo al Carbón', price: 46900, desc: '400 gr de lomo de cerdo a la parrilla, papa, yuca, piña asada, madurito y ensalada.' },
+    { id: 'pasta_alfredo', name: 'Pasta Alfredo con Pollo', price: 39900, desc: 'Pasta penne en salsa blanca con pechuga al carbón, parmesano y tocineta crispy.' },
+    { id: 'churrasco', name: 'Churrasco', price: 58900, desc: '400 gr de lomo ancho al carbón, papa sour cream, yuca, piña asada, madurito y ensalada.' },
+    { id: 'pechuga_carbon', name: 'Pechuga al Carbón', price: 39900, desc: '400 gr de pechuga al carbón, papa a elección, yuca, piña asada, madurito y ensalada.' },
+    { id: 'pechuga_champi', name: 'Pechuga en Salsa de Champiñones', price: 49900, desc: '400 gr de pechuga al carbón bañada en salsa de champiñones, papa, piña asada y ensalada.' },
+    { id: 'pechuga_gratinada', name: 'Pechuga Gratinada', price: 47900, desc: '400 gr de pechuga al carbón gratinada con mozzarella, papa, piña asada y ensalada.' },
+    { id: 'popcorn_pollo', name: 'Popcorn de Pollo', price: 25900, desc: '200 gr de trocitos de pollo crispy, papas a la francesa, jugo y helado.' }
+  ];
+  var ADMIN_PASS = 'JOICE25';
+  // Pega aquí la URL que te dio Google Apps Script al desplegar (termina en /exec)
+  var SHEET_API_URL = 'PEGA_AQUI_TU_URL_DE_APPS_SCRIPT';
+
+  var nameInput = document.getElementById('inv-name');
+  var step1 = document.getElementById('inv-step1');
+  var step2 = document.getElementById('inv-step2');
+  var thanksEl = document.getElementById('inv-thanks');
+  var menuEl = document.getElementById('inv-menu');
+  var confirmDishBtn = document.getElementById('inv-confirm-dish');
+  var nameHint = document.getElementById('inv-name-hint');
+  var adminToggle = document.getElementById('inv-admin-toggle');
+  var adminPanel = document.getElementById('inv-admin');
+
+  var selectedDish = null;
+
+  function money(n) { return '$ ' + n.toLocaleString('es-CO'); }
+
+  DISHES.forEach(function (d) {
+    var el = document.createElement('div');
+    el.className = 'dish';
+    el.dataset.id = d.id;
+    el.innerHTML =
+      '<div class="dname">' + d.name + '</div>' +
+      '<div class="dprice">' + money(d.price) + '</div>' +
+      '<div class="ddesc">' + d.desc + '</div>';
+    el.addEventListener('click', function () {
+      selectedDish = d;
+      Array.prototype.forEach.call(menuEl.children, function (c) { c.classList.remove('selected'); });
+      el.classList.add('selected');
+      confirmDishBtn.disabled = false;
+    });
+    menuEl.appendChild(el);
+  });
+
+  async function saveResponse(record) {
+    try {
+      await fetch(SHEET_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(record)
+      });
+    } catch (e) {
+      console.error('No se pudo guardar la respuesta', e);
+    }
+  }
+
+  function showThanksYes(name, dish) {
+    document.getElementById('inv-intro').style.display = 'none';
+    step1.style.display = 'none';
+    step2.style.display = 'none';
+    thanksEl.style.display = 'block';
+    thanksEl.innerHTML =
+      '<div class="mark">✓</div>' +
+      '<h2>Qué alegría, nos vemos el 25</h2>' +
+      '<p>Gracias por acompañarme, ' + name + '. Poder compartir contigo un momento tan importante para mí hace que este logro tenga un significado aún más especial. Me hace mucha ilusión celebrarlo contigo y guardar juntos este recuerdo tan bonito. ❤️</p>' +
+      '<div class="order"><b>Tu plato:</b> ' + dish.name + ' — ' + money(dish.price) + '<br>El pago se hace directamente en el restaurante.</div>';
+  }
+
+  function showThanksNo(name) {
+    document.getElementById('inv-intro').style.display = 'none';
+    step1.style.display = 'none';
+    step2.style.display = 'none';
+    thanksEl.style.display = 'block';
+    thanksEl.innerHTML =
+      '<div class="mark">♥</div>' +
+      '<h2>Gracias por contarme</h2>' +
+      '<p>Sé que no podrás estar físicamente, ' + name + ', pero tu cariño ya es parte de esta celebración. Un abrazo enorme, y gracias por acompañarme de corazón aunque sea desde la distancia.</p>';
+  }
+
+  document.getElementById('inv-btn-yes').addEventListener('click', function () {
+    var name = nameInput.value.trim();
+    if (!name) { nameHint.style.display = 'block'; nameInput.focus(); return; }
+    nameHint.style.display = 'none';
+    step1.style.display = 'none';
+    step2.style.display = 'block';
+  });
+
+  document.getElementById('inv-btn-no').addEventListener('click', async function () {
+    var name = nameInput.value.trim();
+    if (!name) { nameHint.style.display = 'block'; nameInput.focus(); return; }
+    nameHint.style.display = 'none';
+    await saveResponse({ name: name, attending: false, dish: null, price: null, timestamp: new Date().toISOString() });
+    showThanksNo(name);
+  });
+
+  confirmDishBtn.addEventListener('click', async function () {
+    if (!selectedDish) return;
+    var name = nameInput.value.trim();
+    confirmDishBtn.disabled = true;
+    confirmDishBtn.textContent = 'Guardando…';
+    await saveResponse({ name: name, attending: true, dish: selectedDish.name, price: selectedDish.price, timestamp: new Date().toISOString() });
+    showThanksYes(name, selectedDish);
+  });
+
+  adminToggle.addEventListener('click', function () {
+    if (adminPanel.style.display === 'block') {
+      adminPanel.style.display = 'none';
+      return;
+    }
+    var pass = window.prompt('Código de acceso');
+    if (pass !== ADMIN_PASS) {
+      if (pass !== null) window.alert('Código incorrecto.');
+      return;
+    }
+    renderAdmin();
+  });
+
+  async function renderAdmin() {
+    adminPanel.style.display = 'block';
+    adminPanel.innerHTML = '<div class="step-label">Panel de confirmaciones</div><p class="hint">Cargando…</p>';
+    var list = [];
+    try {
+      var res = await fetch(SHEET_API_URL);
+      list = await res.json();
+    } catch (e) { list = []; }
+
+    var yes = list.filter(function (r) { return r.attending; });
+    var no = list.filter(function (r) { return !r.attending; });
+
+    var html = '';
+    html += '<div class="admin-summary">' +
+      '<div><div class="num">' + yes.length + '</div><div class="lbl">confirmados</div></div>' +
+      '<div><div class="num">' + no.length + '</div><div class="lbl">no asisten</div></div>' +
+      '<div><div class="num">' + list.length + '</div><div class="lbl">respuestas</div></div>' +
+      '</div>';
+
+    if (list.length === 0) {
+      html += '<p class="hint">Todavía no hay respuestas.</p>';
+    } else {
+      html += '<table><thead><tr><th>Nombre</th><th>Asiste</th><th>Plato</th></tr></thead><tbody>';
+      list.slice().reverse().forEach(function (r) {
+        html += '<tr><td>' + r.name + '</td><td>' + (r.attending ? 'Sí' : 'No') + '</td><td>' + (r.dish || '—') + '</td></tr>';
+      });
+      html += '</tbody></table>';
+    }
+    html += '<button class="btn-primary" id="inv-export" type="button">Descargar Excel</button>';
+    adminPanel.innerHTML = html;
+
+    document.getElementById('inv-export').addEventListener('click', function () {
+      var rows = list.map(function (r) {
+        return {
+          Nombre: r.name,
+          Asiste: r.attending ? 'Sí' : 'No',
+          Plato: r.dish || '',
+          Precio: r.price || '',
+          Fecha: r.timestamp ? new Date(r.timestamp).toLocaleString('es-CO') : ''
+        };
+      });
+      var ws = XLSX.utils.json_to_sheet(rows);
+      var wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, 'Confirmaciones');
+      XLSX.writeFile(wb, 'confirmaciones_grado_joice.xlsx');
+    });
+  }
+})();
+</script>
+</body>
+</html>
