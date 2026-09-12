@@ -94,6 +94,33 @@
     color: var(--wine);
     font-weight: 600;
   }
+  #inv-root .venue {
+    text-align: center;
+    margin: 0 0 22px;
+    padding: 14px 16px;
+    background: var(--paper-dim);
+    border: 1px solid #E6D8C0;
+    border-radius: 4px;
+  }
+  #inv-root .venue .vname {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 14.5px;
+    color: var(--wine);
+    margin-bottom: 4px;
+  }
+  #inv-root .venue .vline {
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  #inv-root .venue .vtime {
+    font-size: 12.5px;
+    color: var(--gold);
+    font-weight: 600;
+    margin-top: 6px;
+    letter-spacing: 0.02em;
+  }
   #inv-root p.lead {
     font-family: 'Fraunces', serif;
     font-size: 16.5px;
@@ -345,6 +372,12 @@
     <div class="divider"></div>
     <div class="date-row"><span class="num">25</span> de <span class="num">septiembre</span> de <span class="num">2026</span></div>
 
+    <div class="venue">
+      <div class="vname">Restaurante y Casa de Eventos Los Farolitos</div>
+      <div class="vline">Cra. 35 #69D-35, Suroccidente, Barranquilla, Atlántico</div>
+      <div class="vtime">8:00 PM</div>
+    </div>
+
     <div id="inv-intro">
       <p class="lead">Después de años de fórmulas, procesos y noches sin dormir, llega el momento de celebrar.</p>
       <p class="note">Quiero compartir este logro contigo y tenerte a mi lado en la mesa donde celebraremos todo lo que ha significado llegar hasta aquí. Porque hay momentos que se disfrutan mucho más cuando se comparten con las personas que hacen especial el camino.</p>
@@ -396,7 +429,7 @@
     { id: 'pechuga_carbon', name: 'Pechuga al Carbón', price: 39900, desc: '400 gr de pechuga al carbón, papa a elección, yuca, piña asada, madurito y ensalada.' },
     { id: 'pechuga_champi', name: 'Pechuga en Salsa de Champiñones', price: 49900, desc: '400 gr de pechuga al carbón bañada en salsa de champiñones, papa, piña asada y ensalada.' },
     { id: 'pechuga_gratinada', name: 'Pechuga Gratinada', price: 47900, desc: '400 gr de pechuga al carbón gratinada con mozzarella, papa, piña asada y ensalada.' },
-    { id: 'popcorn_pollo', name: 'Popcorn de Pollo', price: 25900, desc: '200 gr de trocitos de pollo crispy, papas a la francesa, jugo y helado.' }
+    { id: 'popcorn_pollo', name: 'Popcorn de Pollo (Menú infantil)', price: 25900, desc: '200 gr de trocitos de pollo crispy, papas a la francesa, jugo y helado.' }
   ];
   var ADMIN_PASS = 'JOICE25';
   // Pega aquí la URL que te dio Google Apps Script al desplegar (termina en /exec)
